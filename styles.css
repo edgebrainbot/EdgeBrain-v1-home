@@ -520,3 +520,19 @@ footer {
     white-space: normal;
   }
 }
+
+.navigation-pipelines {
+  display: grid;
+  gap: 40px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+.navigation-pipelines img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

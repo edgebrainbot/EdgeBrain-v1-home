@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>EdgeBrain 1.0: On-Device Runtime Learning</title>
-  <link rel="stylesheet" href="styles.css?v=smaller-learning-faults-1">
+  <link rel="stylesheet" href="styles.css?v=navigation-pipelines-5">
   <script src="media-data.js?v=learning-faults-two-videos-1" defer>
 </script>
 <script src="app.js?v=learning-faults-loop-1" defer>
@@ -15,7 +15,7 @@
   <img class="hero-background" src="media/590725351-d7fc5080-ddd6-4ab1-8325-51bb40f616c3.png" alt="">
   <div class="hero-content">
     <h1>EdgeBrain 1.0: On-Device Runtime Learning</h1>
-    <p class="subtitle">Human-like Runtime Learning in Physical Open World</p>
+    <p class="subtitle">Building on Simplex, ACT-R, and Actor-Critic RL</p>
     <p class="authors">Author One  /  Author Two  /  Author Three</p>
     <p>Your University / Research Laboratory</p>
     <div class="links">
@@ -63,6 +63,29 @@
 </div>
 <p class="hint">Replace this panel with your framework figure.</p>
 </section>
+  <section id="original-baseline">
+<h2>Why Learning? Low Cost and Super Performance!</h2>
+<h3>Navigation Pipelines</h3>
+<div class="navigation-pipelines">
+  <figure><img src="media/nonlearning-navigation-pipeline.png" width="1893" height="742" alt="Non-learning navigation pipeline: SLAM, path and motion planning, and motion control, with assumptions and off-road failure modes." loading="eager"></figure>
+  <figure><img src="media/learning-navigation-pipeline.png" width="1708" height="796" alt="Learning navigation pipeline: visual inputs pass through neural networks to control commands, trained with rewards." loading="eager"></figure>
+</div>
+<h3>Autonomous Navigation Comparisons</h3>
+<div class="table-scroll">
+<table>
+<thead><tr><th scope="col">Learning v.s Non-Learning</th><th scope="col">Trip 1</th><th scope="col">Trip 2</th><th scope="col">Trip 3</th><th scope="col">Trip 4</th></tr></thead>
+<tbody>
+<tr><th scope="row">Runtime Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/2o5itbfloedmzvdx88hqf/run1.mp4?rlkey=k1aa4pinw28dja83rjk7ii80b&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/qq7km1osa6oghnl1rbcwr/run2.mp4?rlkey=pcghg7ph5izc1mbtgm23ncuin&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/b7z4wjenxxniq35w7x552/run3.mp4?rlkey=vrkmapuog2mg5eglaiv1b0rtf&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/0vbpteaozewz4nrs0zpqv/run4.mp4?rlkey=1m8fa1zcmfjziac4izwdl65sa&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
+<tr><th scope="row">Non-Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/fjfcmq0h1ar6ku73rmcvk/low1.mp4?rlkey=n31attqo9k01zpw8ht7jlg24c&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/t4ob5umknru9l2mlhti2c/low2.mp4?rlkey=orkopg853s7pcot2a8edny3e5&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/46fjnxu4v2njoiz46mor7/low3.mp4?rlkey=bvh9c8avoiwi2umot225usvkk&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+<tr><th scope="row">Non-Learning: High-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/69jeh9jx1hg57pv9zcwhv/high1.mp4?rlkey=fo9f9k0f7c2yw0tuqngq4d0j3&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/c507oxme8xh8oh61qspj8/high2.mp4?rlkey=klgz497kl1cze8geufub7hvg4&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/nizcunvk4k9x9j53pax7i/high3.mp4?rlkey=kwtj9ba6i2dryv6cjlyo2l8l8&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+
+
+
+
+</tbody>
+</table>
+</div>
+</section>
   <section id="baseline">
 <h2>Baseline Comparisons</h2>
 <ul class="comparison-legend" aria-label="Video marker legend">
@@ -98,23 +121,6 @@
 </section>
   <section id="humanoid">
 <h2>Off-Road Autonomous Vehicles</h2>
-</section>
-  <section id="original-baseline">
-<h2>Learning v.s Non-Learning: Off-Road Navigation</h2>
-<div class="table-scroll">
-<table>
-<thead><tr><th scope="col" aria-label="Method"></th><th scope="col">Trip 1</th><th scope="col">Trip 2</th><th scope="col">Trip 3</th><th scope="col">Trip 4</th></tr></thead>
-<tbody>
-<tr><th scope="row">Runtime Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/it6wwa7etjb6wo0pjimht/our-1.mp4?rlkey=nvdtfqb10be1tkgmmjdr3s17b&amp;raw=1" aria-label="Eureka walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/w9smxini4nu58dbne7nt2/our-3.mp4?rlkey=dnqqfairghqug19vudr0k2gcr&amp;raw=1" aria-label="Keyframing walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/jhkb5a7anmwxtz7venycx/our4.mp4?rlkey=2bgy3xzfo8rg73oujtliu2b9o&amp;raw=1" aria-label="MimicAgent walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/9zh1t4o0ukmjvg3p9r75o/our5.mp4?rlkey=1v2hkgjlcn598lgun55mncpht&amp;raw=1" aria-label="Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
-<tr><th scope="row">Non-Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/33i9eexzxwkqy41bb84do/teacher-3.mp4?rlkey=vtpbadryi1yniaozc83duz6p4&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/4y8paygovnc1coxaqwm0i/teacher-slow1.mp4?rlkey=qvizuhmhcnjqw1t7roa2bh6wj&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/fcr888tkpgn9vz6zlo7rs/teacher-slow4.mp4?rlkey=6v2uwpqobb3vpp3dgf3htdjut&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-<tr><th scope="row">Non-Learning: High-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/xj6oqycm5xzuri9po4snu/non20-1.mp4?rlkey=40x0fckuirshtdhx2eye75wgj&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/6u6h6tbdqdlf9tpbieplv/non20-2.mp4?rlkey=1zpyrzswaraow8ho5458po4ap&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/eeumncurjxi19euwh1mz7/non20-4.mp4?rlkey=lthmf8z3hm5gsfgn8mgbjig7s&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-
-
-
-
-</tbody>
-</table>
-</div>
 </section>
   <section id="citation">
 <p class="eyebrow">08 / REFERENCE</p>

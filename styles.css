@@ -1,0 +1,522 @@
+@charset "UTF-8";
+
+/* Research project styles. Edit the numbered sections below. */
+
+/* 01. Theme colors */
+:root {
+  --paper: #fdfaf4;
+  --ink: #25211c;
+  --muted: #756e64;
+  --line: #e0d7c8;
+  --accent: #a54c32;
+  --panel: #f4eee3
+}
+
+/* 02. Global styles and keyboard focus */
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.7 Georgia,'Times New Roman',serif
+}
+
+a {
+  color: inherit
+}
+
+button,a {
+  -webkit-tap-highlight-color: transparent
+}
+
+a:focus-visible,button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px
+}
+
+/* 03. Hero background, title, and links */
+.hero {
+  position: relative;
+  min-height: 650px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #55799b;
+  color: white;
+  overflow: hidden
+}
+
+.hero>.hero-background {
+  position: absolute;
+  width: min(90%, 600px);
+  height: 80%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: .46
+}
+
+.hero:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent,#10191cba)
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 85px 25px;
+  max-width: 1100px
+}
+
+.eyebrow {
+  font: 11px/1.6 ui-monospace,monospace;
+  letter-spacing: .15em;
+  color: var(--accent);
+  font-weight: 600
+}
+
+.hero .eyebrow {
+  color: #edd0ac
+}
+
+h1 {
+  font-size: clamp(52px,8vw,100px);
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  margin: 25px 0
+}
+
+h2 {
+  font-size: clamp(27px,4vw,38px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  margin: 10px 0 25px
+}
+
+h3 {
+  font-size: 20px
+}
+
+.subtitle {
+  font-size: clamp(20px,3vw,30px)
+}
+
+.authors {
+  margin-bottom: 0
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px
+}
+
+.links a {
+  font: 12px/1.5 ui-monospace,monospace;
+  text-decoration: none;
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 28px;
+  padding: 13px 20px
+}
+
+.links a:hover {
+  background: #ead4b6
+}
+
+/* 04. Main content and section spacing */
+main {
+  max-width: 1040px;
+  margin: auto;
+  padding: 35px 30px
+}
+
+section {
+  padding: 45px 0;
+  border-bottom: 1px solid var(--line)
+}
+
+.notice,.hint {
+  font: 12px/1.7 ui-monospace,monospace;
+  color: var(--muted)
+}
+
+.notice {
+  padding: 0 0 28px
+}
+
+/* 05. Sidebar navigation */
+.toc {
+  position: fixed;
+  top: 90px;
+  left: max(15px,calc(50% - 710px));
+  width: 160px;
+  font: 12px/1.5 ui-monospace,monospace;
+  display: none
+}
+
+.toc.visible {
+  display: block
+}
+
+.toc a {
+  display: block;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 8px 0 8px 12px;
+  border-left: 2px solid var(--line)
+}
+
+.toc strong {
+  display: block;
+  margin-bottom: 15px
+}
+
+.toc a.active {
+  border-color: var(--accent);
+  color: var(--accent)
+}
+
+/* 06. Videos, captions, and teaser grid */
+figure {
+  margin: 0;
+  min-width: 0
+}
+
+video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #e8e4db;
+  object-fit: contain;
+  border-radius: 12px
+}
+
+figcaption {
+  font: 12px/1.6 ui-monospace,monospace;
+  padding: 12px 2px;
+  color: var(--muted)
+}
+
+.teaser {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  margin-inline: auto;
+  gap: 20px
+}
+
+.teaser video {
+  height: auto;
+  aspect-ratio: auto;
+}
+
+/* 07. Method cards */
+.method {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden
+}
+
+.method>div {
+  padding: 25px;
+  background: var(--panel)
+}
+
+.method>div+div {
+  border-left: 1px solid var(--line)
+}
+
+.method span {
+  font: 13px ui-monospace,monospace;
+  color: var(--accent)
+}
+
+.method p {
+  font-size: 16px
+}
+
+/* 08. Baseline comparison table */
+.comparison-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.comparison-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comparison-legend span {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.marker-safety { color: #dc2626; }
+.marker-completion { color: #15803d; }
+.marker-dead-zone { color: #eab308; }
+
+.marker-safety,
+.marker-completion,
+.marker-dead-zone {
+  font-weight: 900;
+  -webkit-text-stroke: 0.7px currentColor;
+}
+
+.video-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.video-stats > span { white-space: nowrap; }
+.video-stats > span > span { font-size: 28px; }
+
+.table-scroll {
+  overflow-x: auto
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 860px;
+  min-width: 0;
+  table-layout: fixed
+}
+
+th,td {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 8px;
+  vertical-align: middle
+}
+
+thead {
+  background: var(--panel);
+  font: 12px/1.6 ui-monospace,monospace
+}
+
+th:first-child {
+  width: 140px
+}
+
+tbody th {
+  text-align: left;
+  overflow-wrap: anywhere;
+  font-size: 15px
+}
+
+td figure {
+  max-width: 640px;
+}
+
+#baseline table,
+#baseline-repeat table {
+  max-width: 1000px;
+  min-width: 760px;
+}
+
+#baseline th:first-child,
+#baseline-repeat th:first-child {
+  width: 245px;
+  padding-right: 12px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+td video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 7px
+}
+
+td figcaption {
+  font-size: 10px
+}
+
+/* 09. Video carousels and controls */
+#original-baseline table {
+  min-width: 960px;
+  max-width: none;
+}
+
+#original-baseline th:first-child {
+  width: 125px;
+}
+
+#original-baseline td video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.carousel {
+  position: relative
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0 20px;
+  scrollbar-width: thin
+}
+
+.track figure {
+  flex: 0 0 72%;
+  scroll-snap-align: center;
+  border: 1px solid var(--line);
+  background: #fffdf8;
+  padding: 10px;
+  border-radius: 16px
+}
+
+#skills .track figure {
+  flex: 0 0 min(85%, 380px);
+}
+
+.track figcaption {
+  font-size: 14px
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 10px
+}
+
+button {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  font-size: 20px
+}
+
+button:hover {
+  background: #e8d7c0
+}
+
+/* 10. Citation, footer, and error messages */
+pre {
+  overflow: auto;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  font-size: 13px
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font: 12px/1.8 ui-monospace,monospace;
+  color: var(--muted)
+}
+
+.media-error {
+  color: #963d29;
+  font: 12px/1.6 ui-monospace,monospace
+}
+
+/* 11. Medium screens: hide the sidebar */
+@media(max-width:1390px) {
+  .toc.visible {
+    display: none
+  }
+
+}
+
+/* 12. Mobile layout */
+@media(max-width:650px) {
+  body {
+    font-size: 16px
+  }
+
+  .hero {
+    min-height: 540px
+  }
+
+  .hero-content {
+    padding: 60px 20px
+  }
+
+  main {
+    padding: 25px 18px
+  }
+
+  .teaser,.method {
+    grid-template-columns: 1fr
+  }
+
+  .method>div+div {
+    border-left: 0;
+    border-top: 1px solid var(--line)
+  }
+
+  .track figure {
+    flex-basis: 90%
+  }
+
+  section {
+    padding: 35px 0
+  }
+
+}
+
+/* 13. Accessibility: reduced motion */
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto
+  }
+
+  .track {
+    scroll-behavior: auto
+  }
+
+}
+
+/* Keep the title on one line on larger screens. */
+.hero h1 {
+  white-space: nowrap;
+  font-size: clamp(24px, 4vw, 64px);
+  letter-spacing: -0.03em;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: none;
+}
+
+/* Allow wrapping on small screens to prevent overflow. */
+@media (max-width: 650px) {
+  .hero h1 {
+    white-space: normal;
+  }
+}

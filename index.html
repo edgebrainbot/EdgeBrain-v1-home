@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EdgeBrain 1.0: On-Device Runtime Learning</title>
+  <link rel="stylesheet" href="styles.css?v=smaller-learning-faults-1">
+  <script src="media-data.js?v=learning-faults-two-videos-1" defer>
+</script>
+<script src="app.js?v=learning-faults-loop-1" defer>
+</script>
+</head>
+<body>
+<header class="hero">
+  <img class="hero-background" src="media/590725351-d7fc5080-ddd6-4ab1-8325-51bb40f616c3.png" alt="">
+  <div class="hero-content">
+    <h1>EdgeBrain 1.0: On-Device Runtime Learning</h1>
+    <p class="subtitle">Human-like Runtime Learning in Physical Open World</p>
+    <p class="authors">Author One  /  Author Two  /  Author Three</p>
+    <p>Your University / Research Laboratory</p>
+    <div class="links">
+<a href="#abstract">Overview</a>
+<a href="#baseline">Video comparisons</a>
+</div>
+  </div>
+</header>
+<nav class="toc" aria-label="Contents">
+<strong>Contents</strong>
+  <a href="#abstract">Abstract</a>
+<a href="#method">Method</a>
+<a href="#baseline">Baseline Comparisons</a>
+<a href="#baseline-repeat">Ablation Evaluations</a>
+<a href="#skills">Learning Faults</a>
+<a href="#humanoid">Off-Road Autonomous Vehicles</a>
+<a href="#citation">Citation</a>
+</nav>
+<main>
+  <div id="teaser" class="teaser">
+</div>
+  <section id="abstract">
+<p class="eyebrow">01 / OVERVIEW</p>
+<h2>Abstract</h2>
+<p>Describe your research problem, proposed approach, and main findings here. Explain what the system learns, how it maintains safety, and how you evaluate it in simulation and on physical robots.</p>
+</section>
+  <section id="method">
+<h2>Method</h2>
+<div class="method">
+<div>
+<span>01</span>
+<h3>Specify the task</h3>
+<p>Define the operating conditions and desired behavior.</p>
+</div>
+<div>
+<span>02</span>
+<h3>Learn a policy</h3>
+<p>Use experience to improve the robot's decisions.</p>
+</div>
+<div>
+<span>03</span>
+<h3>Evaluate on hardware</h3>
+<p>Measure performance and safety in real environments.</p>
+</div>
+</div>
+<p class="hint">Replace this panel with your framework figure.</p>
+</section>
+  <section id="baseline">
+<h2>Baseline Comparisons</h2>
+<ul class="comparison-legend" aria-label="Video marker legend">
+<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
+<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
+<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
+</ul>
+<div class="table-scroll">
+<table>
+<tbody id="comparison">
+</tbody>
+</table>
+</div>
+</section>
+  <section id="baseline-repeat">
+<h2>Ablation Evaluations</h2>
+<ul class="comparison-legend" aria-label="Video marker legend">
+<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
+<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
+<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
+</ul>
+<div class="table-scroll">
+<table>
+<tbody id="comparison-repeat">
+</tbody>
+</table>
+</div>
+</section>
+  <section id="skills">
+<h2>Learning Faults</h2>
+<div class="carousel" data-group="skills">
+</div>
+</section>
+  <section id="humanoid">
+<h2>Off-Road Autonomous Vehicles</h2>
+</section>
+  <section id="original-baseline">
+<h2>Learning v.s Non-Learning: Off-Road Navigation</h2>
+<div class="table-scroll">
+<table>
+<thead><tr><th scope="col" aria-label="Method"></th><th scope="col">Trip 1</th><th scope="col">Trip 2</th><th scope="col">Trip 3</th><th scope="col">Trip 4</th></tr></thead>
+<tbody>
+<tr><th scope="row">Runtime Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/it6wwa7etjb6wo0pjimht/our-1.mp4?rlkey=nvdtfqb10be1tkgmmjdr3s17b&amp;raw=1" aria-label="Eureka walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/w9smxini4nu58dbne7nt2/our-3.mp4?rlkey=dnqqfairghqug19vudr0k2gcr&amp;raw=1" aria-label="Keyframing walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/jhkb5a7anmwxtz7venycx/our4.mp4?rlkey=2bgy3xzfo8rg73oujtliu2b9o&amp;raw=1" aria-label="MimicAgent walking" muted playsinline controls preload="none"></video></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/9zh1t4o0ukmjvg3p9r75o/our5.mp4?rlkey=1v2hkgjlcn598lgun55mncpht&amp;raw=1" aria-label="Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
+<tr><th scope="row">Non-Learning: Low-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/33i9eexzxwkqy41bb84do/teacher-3.mp4?rlkey=vtpbadryi1yniaozc83duz6p4&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/4y8paygovnc1coxaqwm0i/teacher-slow1.mp4?rlkey=qvizuhmhcnjqw1t7roa2bh6wj&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/fcr888tkpgn9vz6zlo7rs/teacher-slow4.mp4?rlkey=6v2uwpqobb3vpp3dgf3htdjut&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+<tr><th scope="row">Non-Learning: High-End Devices</th><td><figure><video data-src="https://www.dropbox.com/scl/fi/xj6oqycm5xzuri9po4snu/non20-1.mp4?rlkey=40x0fckuirshtdhx2eye75wgj&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/6u6h6tbdqdlf9tpbieplv/non20-2.mp4?rlkey=1zpyrzswaraow8ho5458po4ap&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/eeumncurjxi19euwh1mz7/non20-4.mp4?rlkey=lthmf8z3hm5gsfgn8mgbjig7s&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+
+
+
+
+</tbody>
+</table>
+</div>
+</section>
+  <section id="citation">
+<p class="eyebrow">08 / REFERENCE</p>
+<h2>Citation</h2>
+<p>Replace this example with your paper's BibTeX entry.</p>
+<pre>
+<code>@article{yourproject2026,
+  title   = {Your Paper Title},
+  author  = {Your Authors},
+  journal = {Your Venue},
+  year    = {2026}
+}</code>
+</pre>
+</section>
+</main>
+<footer>Independent editable implementation  /  <a href="https://luckykantnayak.github.io/mimic-agent/">MimicAgent reference website</a>
+</footer>
+</body>
+</html>

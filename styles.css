@@ -101,6 +101,7 @@ h1 {
 }
 
 h2 {
+  white-space: nowrap;
   font-size: clamp(27px,4vw,38px);
   line-height: 1.2;
   letter-spacing: -.025em;
@@ -112,7 +113,7 @@ h3 {
 }
 
 .subtitle {
-  font-size: clamp(24px,3.6vw,38px)
+  font-size: clamp(18px,2.6vw,30px)
 }
 
 .authors {
@@ -595,24 +596,16 @@ footer {
 
 }
 
-/* Larger title with wrapping when space is limited. */
+/* Keep the title on one line with a viewport-scaled font size. */
 .hero h1 {
-  white-space: normal;
-  text-wrap: balance;
-  font-size: clamp(30px, 4.5vw, 72px);
+  white-space: nowrap;
+  font-size: clamp(10px, 3.5vw, 56px);
   letter-spacing: -0.03em;
 }
 
 .hero-content {
   width: 100%;
   max-width: none;
-}
-
-/* Allow wrapping on small screens to prevent overflow. */
-@media (max-width: 650px) {
-  .hero h1 {
-    white-space: normal;
-  }
 }
 
 .navigation-pipelines {

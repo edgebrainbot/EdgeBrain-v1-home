@@ -599,7 +599,7 @@ footer {
 .hero h1 {
   white-space: normal;
   text-wrap: balance;
-  font-size: clamp(32px, 5vw, 80px);
+  font-size: clamp(30px, 4.5vw, 72px);
   letter-spacing: -0.03em;
 }
 

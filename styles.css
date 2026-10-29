@@ -4,12 +4,13 @@
 
 /* 01. Theme colors */
 :root {
-  --paper: #fdfaf4;
-  --ink: #25211c;
-  --muted: #756e64;
-  --line: #e0d7c8;
-  --accent: #a54c32;
-  --panel: #f4eee3
+  --paper: #edf2f6;
+  --ink: #202d38;
+  --muted: #627383;
+  --line: #cdd8e2;
+  --accent: #365f80;
+  --panel: #e4ebf1;
+  --video-background: #55799b
 }
 
 /* 02. Global styles and keyboard focus */
@@ -45,35 +46,39 @@ a:focus-visible,button:focus-visible {
 /* 03. Hero background, title, and links */
 .hero {
   position: relative;
-  min-height: 650px;
+  width: 95%;
+  margin-inline: auto;
+  min-height: 0;
+  aspect-ratio: calc(var(--hero-video-ratio, 1.777778) * 1.5);
   display: grid;
   place-items: center;
   text-align: center;
-  background: #55799b;
+  background: var(--video-background);
   color: white;
   overflow: hidden
 }
 
 .hero>.hero-background {
   position: absolute;
-  width: min(90%, 600px);
-  height: 80%;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  opacity: .46
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  background: var(--video-background);
+  pointer-events: none
 }
 
 .hero:after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent,#10191cba)
+  background: rgb(16 25 28 / 65%)
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 85px 25px;
+  padding: 40px 25px;
   max-width: 1100px
 }
 
@@ -85,7 +90,7 @@ a:focus-visible,button:focus-visible {
 }
 
 .hero .eyebrow {
-  color: #edd0ac
+  color: #dae8f5
 }
 
 h1 {
@@ -107,7 +112,7 @@ h3 {
 }
 
 .subtitle {
-  font-size: clamp(20px,3vw,30px)
+  font-size: clamp(24px,3.6vw,38px)
 }
 
 .authors {
@@ -122,7 +127,7 @@ h3 {
   margin-top: 30px
 }
 
-.links a {
+.links a,.links span {
   font: 12px/1.5 ui-monospace,monospace;
   text-decoration: none;
   background: var(--panel);
@@ -223,9 +228,97 @@ figcaption {
 }
 
 /* 07. Method cards */
+.runtime-learning-callout {
+  margin: 24px 0 0;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.open-world-points {
+  list-style-type: disc;
+  padding-left: 24px;
+}
+
+.open-world-points li {
+  margin: 12px 0;
+}
+
+.open-world-points li::marker {
+  color: #000;
+}
+
+.across-environments-videos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.environment-gallery {
+  margin: 20px 0 28px;
+}
+
+.environment-window {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.environment-track {
+  display: flex;
+  width: max-content;
+  animation: environment-scroll 42s linear infinite;
+}
+
+.environment-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.environment-group img {
+  display: block;
+  height: clamp(160px, 22vw, 240px);
+  width: auto;
+  max-width: none;
+  border-radius: 10px;
+}
+
+.environment-gallery:hover .environment-track,
+.environment-gallery:focus-within .environment-track {
+  animation-play-state: paused;
+}
+
+@keyframes environment-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .environment-track { animation: none; }
+  .environment-window { overflow-x: auto; }
+  .environment-group[aria-hidden] { display: none; }
+}
+
+.building-blocks-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.building-blocks-title img {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+  mix-blend-mode: multiply;
+}
+
 .method {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(4,minmax(0,1fr));
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden
@@ -460,11 +553,11 @@ footer {
   }
 
   .hero {
-    min-height: 540px
+    min-height: 0
   }
 
   .hero-content {
-    padding: 60px 20px
+    padding: 30px 20px
   }
 
   main {
@@ -502,10 +595,11 @@ footer {
 
 }
 
-/* Keep the title on one line on larger screens. */
+/* Larger title with wrapping when space is limited. */
 .hero h1 {
-  white-space: nowrap;
-  font-size: clamp(24px, 4vw, 64px);
+  white-space: normal;
+  text-wrap: balance;
+  font-size: clamp(32px, 5vw, 80px);
   letter-spacing: -0.03em;
 }
 
@@ -525,7 +619,7 @@ footer {
   display: grid;
   gap: 40px;
   width: 100%;
-  max-width: 800px;
+  max-width: 650px;
   margin: 0 auto 32px;
   padding-bottom: 32px;
   border-bottom: 1px solid var(--line);
@@ -537,19 +631,107 @@ footer {
   height: auto;
 }
 
+.navigation-pipelines:not(.device-differences) img {
+  mix-blend-mode: multiply;
+}
+
+.device-differences img {
+  mix-blend-mode: multiply;
+}
+
+.navigation-pipelines:not(.device-differences) {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  max-width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+
+.navigation-pipelines:not(.device-differences) figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.device-differences {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 100%;
+  gap: 20px;
+}
+
+.device-differences figure {
+  min-width: 0;
+}
+
+.device-differences a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 800 / 580;
+  background: transparent;
+}
+
+.device-differences a img {
+  position: absolute;
+  width: 250%;
+  max-width: none;
+  left: -92%;
+  top: -39.7%;
+}
+
+.device-differences figure:first-child a {
+  aspect-ratio: 800 / 580;
+}
+
+.device-differences figure:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  left: 0;
+  top: 0;
+}
+
 #original-baseline .runtime-learning-videos > th,
 #original-baseline .runtime-learning-videos > td {
   border-bottom: 0;
 }
 
 #original-baseline .navigation-conclusion > td {
-  padding: 0 8px 0 40px;
+  padding: 0 8px;
+  text-align: center;
   font-weight: 700;
 }
 
 #original-baseline .navigation-conclusion > td > span {
+  font-size: 14px;
+  position: relative;
+  left: 80px;
   display: inline-block;
-  padding: 6px 6px;
+  padding: 6px 12px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
   white-space: nowrap;
-  background-color: #e7f0fa;
+  background: transparent;
+}
+
+#original-baseline .nonlearning-low-end-videos > th,
+#original-baseline .nonlearning-low-end-videos > td,
+#original-baseline .nonlearning-high-end-videos > th,
+#original-baseline .nonlearning-high-end-videos > td {
+  border-bottom: 0;
+}
+
+/* Compact title overlay for the shorter background video. */
+.hero .hero-content {
+  padding: 12px 20px;
+}
+
+.hero h1 {
+  margin: 8px 0;
+}
+
+.hero-content p {
+  margin: 4px 0;
+}
+
+.hero .links {
+  margin-top: 10px;
 }

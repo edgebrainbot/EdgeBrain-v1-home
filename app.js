@@ -3,6 +3,12 @@
 const MEDIA_BASE = 'https://luckykantnayak.github.io/mimic-agent/';
 const media = window.MEDIA;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heroVideo = document.querySelector('.hero-background');
+heroVideo.addEventListener('loadedmetadata', () => {
+  if (heroVideo.videoWidth && heroVideo.videoHeight) {
+    heroVideo.parentElement.style.setProperty('--hero-video-ratio', heroVideo.videoWidth / heroVideo.videoHeight);
+  }
+});
 function url(path) { return new URL(path, new URL(MEDIA_BASE, location.href)).href; }
 function makeVideo(item) {
   const figure = document.createElement('figure');
@@ -48,11 +54,7 @@ function makeVideo(item) {
   if (item.showCaption !== false && !['Ours', 'Model Predictive Shielding', 'Real-DRL', 'Neural Simplex', 'Dynamic Residual', 'Fixed Residual', 'Side view of skating on two legs', 'Back view of skating on two legs'].includes(item.title)) figure.append(caption);
   return figure;
 }
-document.querySelector('#teaser').append(makeVideo({
-  title: 'Learning process',
-  showCaption: false,
-  src: 'https://www.dropbox.com/scl/fi/90or3djqf1vzrz161im77/learning-process2.0.mp4?rlkey=l4f9x2z1vzv7sff1jha650kqj&raw=1'
-}));
+
 const baselines = media.filter(x => x.group === 'comparison' || x.src.startsWith('Survey_videos/'));
 const skillNames = ['Ours', 'Model Predictive Shielding', 'Real-DRL', 'Neural Simplex', 'Dynamic Residual', 'Fixed Residual'];
 document.querySelectorAll('#comparison, #comparison-repeat').forEach(comparison => {
@@ -98,6 +100,10 @@ document.querySelectorAll('.carousel').forEach(container => {
 // Loading and playback are separate: load near the viewport, play when visible.
 function loadVideo(video) { if (!video.src) { video.src = video.dataset.src; video.load(); } }
 const videos = [...document.querySelectorAll('video[data-src]')];
+document.querySelectorAll('video').forEach(video => {
+  video.setAttribute('controlsList', 'nodownload');
+  video.addEventListener('contextmenu', event => event.preventDefault());
+});
 if ('IntersectionObserver' in window) {
   const loader = new IntersectionObserver(entries => entries.forEach(e => {
     if (e.isIntersecting) { loadVideo(e.target); loader.unobserve(e.target); }

@@ -4,15 +4,15 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>EdgeBrain 1.0: On-Device Runtime Learning</title>
-  <link rel="stylesheet" href="styles.css?v=single-line-sections-59">
+  <link rel="stylesheet" href="styles.css?v=thicker-title-underlines-79">
   <script src="media-data.js?v=learning-faults-two-videos-1" defer>
 </script>
-<script src="app.js?v=single-line-sections-7" defer>
+<script src="app.js?v=ablation-captions-12" defer>
 </script>
 </head>
 <body>
 <header class="hero">
-  <video controlslist="nodownload" class="hero-background" data-src="https://www.dropbox.com/scl/fi/744v91u2qlscyz0hycpji/original.mp4?rlkey=hcgy62pyoqljew1l2erb00rji&amp;raw=1" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  <video controlslist="nodownload" class="hero-background" data-src="media/hero-background-audio.mp4" poster="media/hero-poster-hd.jpg" loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero-content">
     <h1>EdgeBrain 1.0: On-Device Runtime Learning</h1>
     <p class="subtitle">Human-like Learning in Physical Open World</p>
@@ -27,9 +27,9 @@
   <a href="#abstract">01 / Physical Open World</a>
 <a href="#method">02 / Building Blocks</a>
 <a href="#original-baseline">03 / Learning Aim: Low Cost and Super Performance</a>
-<a href="#baseline">04 / Baseline Comparisons</a>
-<a href="#baseline-repeat">05 / Ablation Evaluations</a>
-<a href="#across-environments">06 / Across Environments</a>
+<a href="#across-environments">04 / Across Environments</a>
+<a href="#baseline">05 / Baseline Comparisons</a>
+<a href="#baseline-repeat">06 / Ablation Evaluations</a>
 <a href="#humanoid">07 / Off-Road Autonomous Vehicles</a>
 <a href="#contact">08 / Contact</a>
 </nav>
@@ -111,49 +111,21 @@
 <thead><tr><th scope="col">Learning v.s Non-Learning</th><th scope="col">Trip 1</th><th scope="col">Trip 2</th><th scope="col">Trip 3</th><th scope="col">Trip 4</th></tr></thead>
 <tbody>
 <tr class="runtime-learning-videos"><th scope="row">Runtime Learning: Low-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/2o5itbfloedmzvdx88hqf/run1.mp4?rlkey=k1aa4pinw28dja83rjk7ii80b&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/qq7km1osa6oghnl1rbcwr/run2.mp4?rlkey=pcghg7ph5izc1mbtgm23ncuin&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/b7z4wjenxxniq35w7x552/run3.mp4?rlkey=vrkmapuog2mg5eglaiv1b0rtf&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/0vbpteaozewz4nrs0zpqv/run4.mp4?rlkey=1m8fa1zcmfjziac4izwdl65sa&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span><strong>Performance: Safe, Stable, Fast, and High-Precision Goal Arrival!</strong></span></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Safe, Stable, Fast, and High-Precision Goal Arrival!</strong></span></td></tr>
 <tr class="nonlearning-low-end-videos"><th scope="row">Non-Learning: Low-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/fjfcmq0h1ar6ku73rmcvk/low1.mp4?rlkey=n31attqo9k01zpw8ht7jlg24c&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/t4ob5umknru9l2mlhti2c/low2.mp4?rlkey=orkopg853s7pcot2a8edny3e5&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/46fjnxu4v2njoiz46mor7/low3.mp4?rlkey=bvh9c8avoiwi2umot225usvkk&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
 <tr class="nonlearning-high-end-videos"><th scope="row">Non-Learning: High-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/69jeh9jx1hg57pv9zcwhv/high1.mp4?rlkey=fo9f9k0f7c2yw0tuqngq4d0j3&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/c507oxme8xh8oh61qspj8/high2.mp4?rlkey=klgz497kl1cze8geufub7hvg4&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/nizcunvk4k9x9j53pax7i/high3.mp4?rlkey=kwtj9ba6i2dryv6cjlyo2l8l8&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
 
 
 
 
-</tbody>
-</table>
-</div>
-</section>
-  <section id="baseline">
-<h2>04 / Baseline Comparisons</h2>
-<ul class="comparison-legend" aria-label="Video marker legend">
-<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
-<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
-<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
-</ul>
-<div class="table-scroll">
-<table>
-<tbody id="comparison">
-</tbody>
-</table>
-</div>
-</section>
-  <section id="baseline-repeat">
-<h2>05 / Ablation Evaluations</h2>
-<ul class="comparison-legend" aria-label="Video marker legend">
-<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
-<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
-<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
-</ul>
-<div class="table-scroll">
-<table>
-<tbody id="comparison-repeat">
 </tbody>
 </table>
 </div>
 </section>
   <section id="across-environments">
-<h2>06 / Across Environments</h2>
+<h2>04 / Across Environments</h2>
 <div class="across-environments-videos">
 <figure>
 <video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/y6zadlkdb1kal63qm4kwy/env1.mp4?rlkey=oswqss3k2bhnjctourhe7fahq&amp;raw=1" aria-label="Across Environments: Environment 1" muted loop playsinline controls preload="none"></video>
@@ -167,6 +139,34 @@
 <figure>
 <video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/y70ivwejn9uqy24bwvtrh/env4.mp4?rlkey=umuaikeest9yg4ouym71ahkl5&amp;raw=1" aria-label="Across Environments: Environment 4" muted loop playsinline controls preload="none"></video>
 </figure>
+</div>
+</section>
+  <section id="baseline">
+<h2>05 / Baseline Comparisons</h2>
+<ul class="comparison-legend" aria-label="Video marker legend">
+<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
+<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
+<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
+</ul>
+<div class="table-scroll">
+<table>
+<tbody id="comparison">
+</tbody>
+</table>
+</div>
+</section>
+  <section id="baseline-repeat">
+<h2>06 / Ablation Evaluations</h2>
+<ul class="comparison-legend" aria-label="Video marker legend">
+<li><span class="marker-safety" aria-hidden="true">×</span> Safety Violation</li>
+<li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
+<li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
+</ul>
+<div class="table-scroll">
+<table>
+<tbody id="comparison-repeat">
+</tbody>
+</table>
 </div>
 </section>
   <section id="humanoid">

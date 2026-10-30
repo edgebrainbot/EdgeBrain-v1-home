@@ -21,6 +21,37 @@ const MEDIA_BASE = 'https://luckykantnayak.github.io/mimic-agent/';
 const media = window.MEDIA;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const heroVideo = document.querySelector('.hero-background');
+heroVideo.muted = false;
+// If audible autoplay is blocked, keep the background moving silently.
+async function playVisibleVideo(video) {
+  try {
+    await video.play();
+  } catch (error) {
+    if (video === heroVideo && !video.muted && error.name === 'NotAllowedError') {
+      video.muted = true;
+      video.play().catch(() => {});
+    }
+  }
+}
+// A normal page interaction can unlock sound without adding a control.
+function enableHeroAudio(event) {
+  if (!event.isTrusted) return;
+  const bounds = heroVideo.getBoundingClientRect();
+  if (bounds.bottom <= 0 || bounds.top >= innerHeight) return;
+  heroVideo.muted = false;
+  loadVideo(heroVideo);
+  heroVideo.play().then(() => {
+    document.removeEventListener('click', enableHeroAudio);
+    document.removeEventListener('keydown', enableHeroAudio);
+  }).catch(() => { heroVideo.muted = true; });
+}
+document.addEventListener('click', enableHeroAudio);
+document.addEventListener('keydown', enableHeroAudio);
+// Start loading the background before building the other video galleries.
+if (!reducedMotion) {
+  heroVideo.src = heroVideo.dataset.src;
+  heroVideo.load();
+}
 heroVideo.addEventListener('loadedmetadata', () => {
   if (heroVideo.videoWidth && heroVideo.videoHeight) {
     heroVideo.parentElement.style.setProperty('--hero-video-ratio', heroVideo.videoWidth / heroVideo.videoHeight);
@@ -35,7 +66,7 @@ function makeVideo(item) {
   video.muted = true; video.loop = item.loop === true; video.playsInline = true;
   video.controls = true; video.preload = 'none';
   video.setAttribute('aria-label', item.title);
-  const caption = document.createElement('figcaption'); caption.textContent = item.title;
+  const caption = document.createElement('figcaption'); caption.textContent = item.captionText || item.title;
   video.addEventListener('error', () => {
     caption.textContent = item.title + '  -  Video unavailable. Check the URL or replace with a local file.';
     caption.classList.add('media-error');
@@ -68,7 +99,7 @@ function makeVideo(item) {
     figure.append(stats);
   }
   figure.append(video);
-  if (item.showCaption !== false && !['Ours', 'Model Predictive Shielding', 'Real-DRL', 'Neural Simplex', 'Dynamic Residual', 'Fixed Residual', 'Side view of skating on two legs', 'Back view of skating on two legs'].includes(item.title)) figure.append(caption);
+  if (item.captionBelow || (item.showCaption !== false && !['Ours', 'Model Predictive Shielding', 'Real-DRL', 'Neural Simplex', 'Dynamic Residual', 'Fixed Residual', 'Side view of skating on two legs', 'Back view of skating on two legs'].includes(item.title))) figure.append(caption);
   return figure;
 }
 
@@ -77,12 +108,10 @@ const skillNames = ['Ours', 'Model Predictive Shielding', 'Real-DRL', 'Neural Si
 document.querySelectorAll('#comparison, #comparison-repeat').forEach(comparison => {
 for (let row = 0; row < skillNames.length; row++) {
   if (comparison.id === 'comparison-repeat' && skillNames[row] === 'Fixed Residual') continue;
-  const tr = document.createElement('tr'); const th = document.createElement('th');
-  th.scope = 'row';
+  const tr = document.createElement('tr');
   const ablationNames = ['Blending+Cognitive+Switching', 'Cognitive+Switching', 'Blending+Switching', 'Blending+Cognitive', 'Blending+Random'];
-  th.textContent = comparison.id === 'comparison-repeat'
+  const captionText = comparison.id === 'comparison-repeat'
     ? (ablationNames[row] || skillNames[row]) : skillNames[row];
-  tr.append(th);
   baselines.slice(row * 3, row * 3 + 1).forEach(item => {
     const videoItem = comparison.id === 'comparison-repeat' && row === 0
       ? {...item, local: false, src: 'https://www.dropbox.com/scl/fi/cnbnpsnrc01ldti2n4pje/ed_Bledning-cognitive-switching.mp4?rlkey=tfj9j6zaf299zk37rdu0w2p01&raw=1'}
@@ -95,7 +124,9 @@ for (let row = 0; row < skillNames.length; row++) {
             : comparison.id === 'comparison-repeat' && row === 4
               ? {...item, stats: ['15/20', '2/20', '3/20'], local: false, src: 'https://www.dropbox.com/scl/fi/lg2li48a0del238s18b9i/ed_blending-random.mp4?rlkey=10zmd4g6phi64k9hheomr9i6z&raw=1'}
               : item;
-    const td = document.createElement('td'); td.append(makeVideo(videoItem)); tr.append(td);
+    const td = document.createElement('td');
+    td.append(makeVideo({...videoItem, captionText, captionBelow: true}));
+    tr.append(td);
   });
   comparison.append(tr);
 }
@@ -126,7 +157,7 @@ if ('IntersectionObserver' in window) {
     if (e.isIntersecting) { loadVideo(e.target); loader.unobserve(e.target); }
   }), {rootMargin:'250px'});
   const playback = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting && !reducedMotion && !e.target.ended) { loadVideo(e.target); e.target.play().catch(() => {}); }
+    if (e.isIntersecting && !reducedMotion && !e.target.ended) { loadVideo(e.target); playVisibleVideo(e.target); }
     else e.target.pause();
   }), {threshold:.2});
   videos.forEach(v => {loader.observe(v); playback.observe(v);});

@@ -16,7 +16,8 @@ It is not an exact copy of the original website.
 6. Save edits and refresh the page. Press Ctrl+C in the terminal to stop.
 
 You can also open index.html directly in a browser.
-Demo videos and posters are loaded from the original website and require internet access.
+The background video and its poster are stored locally in media/.
+Other videos load from external hosts and require internet access.
 
 ## Edit the files
 
@@ -46,6 +47,10 @@ Use a fresh extracted folder rather than mixing old and new files.
 If the browser shows old content, hard-refresh the page or clear its cache.
 
 ## Publish on GitHub Pages
+
+Keep media/hero-background-audio.mp4 and media/hero-poster-hd.jpg with the source
+files and other images. These are the background video and poster used by index.html.
+Unused background video exports have been removed.
 
 Upload the contents of this folder so index.html is at the repository root.
 Do not upload only the ZIP archive.

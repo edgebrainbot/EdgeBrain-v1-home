@@ -4,10 +4,10 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>EdgeBrain 1.0: On-Device Runtime Learning</title>
-  <link rel="stylesheet" href="styles.css?v=thicker-title-underlines-79">
+  <link rel="stylesheet" href="styles.css?v=white-building-blocks-87">
   <script src="media-data.js?v=learning-faults-two-videos-1" defer>
 </script>
-<script src="app.js?v=ablation-captions-12" defer>
+<script src="app.js?v=responsive-titles-13" defer>
 </script>
 </head>
 <body>
@@ -30,8 +30,9 @@
 <a href="#across-environments">04 / Across Environments</a>
 <a href="#baseline">05 / Baseline Comparisons</a>
 <a href="#baseline-repeat">06 / Ablation Evaluations</a>
-<a href="#humanoid">07 / Off-Road Autonomous Vehicles</a>
-<a href="#contact">08 / Contact</a>
+<a href="#humanoid-robot">07 / Humanoid Robot</a>
+<a href="#humanoid">08 / Off-Road Autonomous Vehicles</a>
+<a href="#contact">09 / Contact</a>
 </nav>
 <main>
   <section id="abstract">
@@ -106,16 +107,17 @@
   <figure><a href="https://www.dropbox.com/scl/fi/60yjuti1v3edz8nikw9no/high.pdf?rlkey=4iftyod3j0eod2fpfiqmaoygu&amp;dl=0" target="_blank" rel="noopener"><img src="media/high-end-device.png" width="2000" height="1125" alt="High-end device configuration on the navigation robot, from high.pdf." loading="lazy"></a><figcaption><strong>● CPU: Core i9-13900H, 5.4 GHz<br>● Hesai-XT16 LiDAR: 320,000 points/s, 0.05–120 m range.</strong></figcaption></figure>
 </div>
 <h3>Off-Road Navigation Comparisons:</h3>
-<div class="table-scroll">
+<p class="table-scroll-hint">Swipe or scroll horizontally to compare all videos.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Video comparison table">
 <table>
 <thead><tr><th scope="col">Learning v.s Non-Learning</th><th scope="col">Trip 1</th><th scope="col">Trip 2</th><th scope="col">Trip 3</th><th scope="col">Trip 4</th></tr></thead>
 <tbody>
-<tr class="runtime-learning-videos"><th scope="row">Runtime Learning: Low-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/2o5itbfloedmzvdx88hqf/run1.mp4?rlkey=k1aa4pinw28dja83rjk7ii80b&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/qq7km1osa6oghnl1rbcwr/run2.mp4?rlkey=pcghg7ph5izc1mbtgm23ncuin&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/b7z4wjenxxniq35w7x552/run3.mp4?rlkey=vrkmapuog2mg5eglaiv1b0rtf&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/0vbpteaozewz4nrs0zpqv/run4.mp4?rlkey=1m8fa1zcmfjziac4izwdl65sa&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Safe, Stable, Fast, and High-Precision Goal Arrival!</strong></span></td></tr>
-<tr class="nonlearning-low-end-videos"><th scope="row">Non-Learning: Low-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/fjfcmq0h1ar6ku73rmcvk/low1.mp4?rlkey=n31attqo9k01zpw8ht7jlg24c&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/t4ob5umknru9l2mlhti2c/low2.mp4?rlkey=orkopg853s7pcot2a8edny3e5&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/46fjnxu4v2njoiz46mor7/low3.mp4?rlkey=bvh9c8avoiwi2umot225usvkk&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
-<tr class="nonlearning-high-end-videos"><th scope="row">Non-Learning: High-End Devices</th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/69jeh9jx1hg57pv9zcwhv/high1.mp4?rlkey=fo9f9k0f7c2yw0tuqngq4d0j3&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/c507oxme8xh8oh61qspj8/high2.mp4?rlkey=klgz497kl1cze8geufub7hvg4&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/nizcunvk4k9x9j53pax7i/high3.mp4?rlkey=kwtj9ba6i2dryv6cjlyo2l8l8&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
-<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and Large Goal-Arrival Drift!</strong></span></td></tr>
+<tr class="runtime-learning-videos"><th scope="row"><span class="runtime-learning-label"><span class="runtime-learning-label-line">Runtime Learning:</span><br>Low-End Devices</span></th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/2o5itbfloedmzvdx88hqf/run1.mp4?rlkey=k1aa4pinw28dja83rjk7ii80b&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/qq7km1osa6oghnl1rbcwr/run2.mp4?rlkey=pcghg7ph5izc1mbtgm23ncuin&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/b7z4wjenxxniq35w7x552/run3.mp4?rlkey=vrkmapuog2mg5eglaiv1b0rtf&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/0vbpteaozewz4nrs0zpqv/run4.mp4?rlkey=1m8fa1zcmfjziac4izwdl65sa&amp;raw=1" aria-label="Runtime Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video></figure></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Safe, Stable, Fast, and <span class="goal-arrival">High-Precision Goal Arrival</span></strong></span></td></tr>
+<tr class="nonlearning-low-end-videos"><th scope="row"><span class="runtime-learning-label"><span class="runtime-learning-label-line">Non-Learning:</span><br>Low-End Devices</span></th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/fjfcmq0h1ar6ku73rmcvk/low1.mp4?rlkey=n31attqo9k01zpw8ht7jlg24c&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/t4ob5umknru9l2mlhti2c/low2.mp4?rlkey=orkopg853s7pcot2a8edny3e5&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/46fjnxu4v2njoiz46mor7/low3.mp4?rlkey=bvh9c8avoiwi2umot225usvkk&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/bf73nmuucvfoqfl7bv73p/teacher-fast3.mp4?rlkey=9pnlh8g2jwkhsczfnuvbk02qb&amp;raw=1" aria-label="Non-Learning: Low-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and <span class="goal-arrival">Large Goal-Arrival Drift</span></strong></span></td></tr>
+<tr class="nonlearning-high-end-videos"><th scope="row"><span class="runtime-learning-label"><span class="runtime-learning-label-line">Non-Learning:</span><br>High-End Devices</span></th><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/69jeh9jx1hg57pv9zcwhv/high1.mp4?rlkey=fo9f9k0f7c2yw0tuqngq4d0j3&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 1" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/c507oxme8xh8oh61qspj8/high2.mp4?rlkey=klgz497kl1cze8geufub7hvg4&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 2" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/nizcunvk4k9x9j53pax7i/high3.mp4?rlkey=kwtj9ba6i2dryv6cjlyo2l8l8&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 3" muted playsinline controls preload="none"></video><figcaption>Normal Speed Limit</figcaption></figure></td><td><figure><video controlslist="nodownload" data-src="https://www.dropbox.com/scl/fi/vez776c750ahlpdb9fr5h/aa.mp4?rlkey=ka5gwcc11vdq7woq3yjd1tnr2&amp;raw=1" aria-label="Non-Learning: High-End Devices, Trip 4" muted playsinline controls preload="none"></video><figcaption>Little-High Speed Limit</figcaption></figure></td></tr>
+<tr class="navigation-conclusion"><td colspan="5"><span class="performance-highlight"><strong>Performance: Unstable, Slow, and <span class="goal-arrival">Large Goal-Arrival Drift</span></strong></span></td></tr>
 
 
 
@@ -148,7 +150,8 @@
 <li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
 <li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
 </ul>
-<div class="table-scroll">
+<p class="table-scroll-hint">Swipe or scroll horizontally to compare all videos.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Video comparison table">
 <table>
 <tbody id="comparison">
 </tbody>
@@ -162,18 +165,22 @@
 <li><span class="marker-completion" aria-hidden="true">✓</span> Task Completion</li>
 <li><span class="marker-dead-zone" aria-hidden="true">—</span> Dead-Zone Encounter</li>
 </ul>
-<div class="table-scroll">
+<p class="table-scroll-hint">Swipe or scroll horizontally to compare all videos.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Video comparison table">
 <table>
 <tbody id="comparison-repeat">
 </tbody>
 </table>
 </div>
 </section>
+  <section id="humanoid-robot">
+<h2>07 / Humanoid Robot</h2>
+</section>
   <section id="humanoid">
-<h2>07 / Off-Road Autonomous Vehicles</h2>
+<h2>08 / Off-Road Autonomous Vehicles</h2>
 </section>
   <section id="contact">
-<h2>08 / Contact</h2>
+<h2>09 / Contact</h2>
 <p><a href="mailto:anonymous.authors.papers@gmail.com">anonymous.authors.papers@gmail.com</a></p>
 </section>
 </main>

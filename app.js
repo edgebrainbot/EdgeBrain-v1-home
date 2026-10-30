@@ -1,21 +1,4 @@
 'use strict';
-const sectionTitles = document.querySelectorAll('section h2');
-function fitSectionTitles() {
-  sectionTitles.forEach(title => {
-    title.style.removeProperty('font-size');
-    let size = parseFloat(getComputedStyle(title).fontSize);
-    while (title.scrollWidth > title.clientWidth && size > 8) {
-      size -= 0.5;
-      title.style.fontSize = size + 'px';
-    }
-  });
-}
-fitSectionTitles();
-addEventListener('resize', fitSectionTitles);
-if (document.fonts) document.fonts.ready.then(fitSectionTitles);
-document.querySelectorAll('section h2 img').forEach(img => {
-  img.addEventListener('load', fitSectionTitles);
-});
 // Replace this with './' after replacing media paths with your local assets.
 const MEDIA_BASE = 'https://luckykantnayak.github.io/mimic-agent/';
 const media = window.MEDIA;

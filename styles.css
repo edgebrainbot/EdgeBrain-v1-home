@@ -282,7 +282,7 @@ figcaption {
 .environment-track {
   display: flex;
   width: max-content;
-  animation: environment-scroll 42s linear infinite;
+  animation: environment-scroll 10s linear infinite;
 }
 
 .environment-group {
